@@ -31,7 +31,8 @@ function Footer({
       fontWeight: '500',
       position: 'relative',
       textAlign: 'left',
-      minHeight: '20px'
+      minHeight: '20px',
+      color: colorTitle || '#ffffff'
     },
     footerCol_h4_before: {
       '&::before': {
@@ -61,7 +62,8 @@ function Footer({
       '&::hover': {
         color: '#ffffff',
         paddingLeft: '8px'
-      }
+      },
+      color: colorLabel || '#bbbbbb'
     },
     footerCol__socialLinks_a: {
       display: 'inline-block',
@@ -100,8 +102,7 @@ function Footer({
                 <h4
                   style={[
                     stylesInline.footerCol_h4,
-                    e.title !== '' && stylesInline.footerCol_h4_before,
-                    { color: colorTitle || '#ffffff' }
+                    e.title !== '' && stylesInline.footerCol_h4_before
                   ]}
                 >
                   {e.title}
@@ -118,10 +119,7 @@ function Footer({
                       >
                         {c.blank ? (
                           <a
-                            style={[
-                              stylesInline.footerCol_ul_li_a,
-                              { color: colorLabel || '#bbbbbb' }
-                            ]}
+                            style={[stylesInline.footerCol_ul_li_a]}
                             href={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
@@ -131,10 +129,7 @@ function Footer({
                           </a>
                         ) : (
                           <a
-                            style={[
-                              stylesInline.footerCol_ul_li_a,
-                              { color: colorLabel || '#bbbbbb' }
-                            ]}
+                            style={[stylesInline.footerCol_ul_li_a]}
                             href={c.link}
                           >
                             {c.icon}
