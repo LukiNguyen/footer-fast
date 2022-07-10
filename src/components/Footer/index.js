@@ -9,8 +9,8 @@ function Footer({
 }) {
   const stylesInline = {
     footer: {
-      backgroundColor: '#24262b',
-      padding: '70px 0'
+      padding: '70px 0',
+      background: background || '#24262b'
     },
     container: {
       maxWdth: '1170px',
@@ -35,21 +35,21 @@ function Footer({
       color: colorTitle || '#ffffff'
     },
     footerCol_h4_before: {
-      '&::before': {
-        content: "''",
-        position: 'absolute',
-        left: '0',
-        bottom: '-10px',
-        backgroundColor: '#f5941a',
-        height: '2px',
-        boxSizing: 'border-box',
-        width: '50px'
-      }
+      // '&::before': {
+      //   content: "''",
+      //   position: 'absolute',
+      //   left: '0',
+      //   bottom: '-10px',
+      //   backgroundColor: '#f5941a',
+      //   height: '2px',
+      //   boxSizing: 'border-box',
+      //   width: '50px'
+      // }
     },
     footerCol_ul_li_not__last_child: {
-      '&::not(:last-child)': {
-        marginBottom: '10px'
-      }
+      // '&::not(:last-child)': {
+      //   marginBottom: '10px'
+      // }
     },
     footerCol_ul_li_a: {
       fontSize: '16px',
@@ -59,10 +59,10 @@ function Footer({
       transition: 'all 0.3s ease',
       display: 'flex',
       gap: '10px',
-      '&::hover': {
-        color: '#ffffff',
-        paddingLeft: '8px'
-      },
+      // '&::hover': {
+      //   color: '#ffffff',
+      //   paddingLeft: '8px'
+      // },
       color: colorLabel || '#bbbbbb'
     },
     footerCol__socialLinks_a: {
@@ -91,15 +91,13 @@ function Footer({
     }
   }
   return (
-    <footer
-      style={[stylesInline.footer, { background: background || '#24262b' }]}
-    >
+    <footer style={stylesInline.footer}>
       <div style={stylesInline.container}>
         <div style={stylesInline.row}>
           {listColumn.map((e, i) => {
             return (
               <div style={stylesInline.footerCol} key={i}>
-                {/* <h4
+                <h4
                   style={[
                     stylesInline.footerCol_h4,
                     e.title !== '' && stylesInline.footerCol_h4_before
@@ -139,7 +137,7 @@ function Footer({
                       </li>
                     )
                   })}
-                </ul> */}
+                </ul>
               </div>
             )
           })}
