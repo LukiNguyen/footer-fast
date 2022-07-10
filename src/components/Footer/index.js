@@ -13,7 +13,7 @@ function Footer({
       background: background || '#24262b'
     },
     container: {
-      maxWdth: '1170px',
+      maxWidth: '1170px',
       margin: 'auto'
     },
     row: {
@@ -35,16 +35,16 @@ function Footer({
       color: colorTitle || '#ffffff'
     },
     footerCol_h4_before: {
-      // '&::before': {
-      //   content: "''",
-      //   position: 'absolute',
-      //   left: '0',
-      //   bottom: '-10px',
-      //   backgroundColor: '#f5941a',
-      //   height: '2px',
-      //   boxSizing: 'border-box',
-      //   width: '50px'
-      // }
+      '&::before': {
+        content: "''",
+        position: 'absolute',
+        left: '0',
+        bottom: '-10px',
+        backgroundColor: '#f5941a',
+        height: '2px',
+        boxSizing: 'border-box',
+        width: '50px'
+      }
     },
     footerCol_ul_li_not__last_child: {
       // '&::not(:last-child)': {
