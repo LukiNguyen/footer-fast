@@ -7,6 +7,7 @@ function Footer({
   listColumn,
   styles
 }) {
+  const [hoverLink, setHoverLink] = React.useState(false)
   const stylesInline = {
     footer: {
       padding: '70px 0',
@@ -35,7 +36,15 @@ function Footer({
       color: colorTitle || '#ffffff'
     },
     footerCol_h4_before: {
-      '&::before': {
+      fontSize: '18px',
+      textTransform: 'capitalize',
+      marginBottom: '35px',
+      fontWeight: '500',
+      position: 'relative',
+      textAlign: 'left',
+      minHeight: '20px',
+      color: colorTitle || '#ffffff',
+      '::before': {
         content: "''",
         position: 'absolute',
         left: '0',
@@ -47,7 +56,7 @@ function Footer({
       }
     },
     footerCol_ul_li_not__last_child: {
-      '&::not(:last-child)': {
+      '&::not(:lastChild)': {
         marginBottom: '10px'
       }
     },
@@ -59,27 +68,20 @@ function Footer({
       transition: 'all 0.3s ease',
       display: 'flex',
       gap: '10px',
-      '&::hover': {
-        color: '#ffffff',
-        paddingLeft: '8px'
-      },
-      color: colorLabel || '#bbbbbb'
+      color: hoverLink ? colorLabel || '#bbbbbb' : '#fff',
+      paddingLeft: hoverLink ? '0px' : '8px'
     },
     footerCol__socialLinks_a: {
       display: 'inline-block',
       height: '40px',
       width: '40px',
-      backgroundColor: 'rgba(255,255,255,0.2)',
+      backgroundColor: hoverLink ? '#ffffff' : 'rgba(255,255,255,0.2)',
       margin: '0 10px 10px 0',
       textAlign: 'center',
       lineHeight: '40px',
       borderRadius: '50%',
-      color: '#ffffff',
-      transition: 'all 0.5s ease',
-      '&::hover': {
-        color: '#24262b',
-        backgroundColor: '#ffffff'
-      }
+      color: hoverLink ? '#24262b' : '#ffffff',
+      transition: 'all 0.5s ease'
     },
     '@media (max-width: 767px)': {
       __expression__: '(max-width: 767px)',
@@ -99,8 +101,9 @@ function Footer({
               <div style={stylesInline.footerCol} key={i}>
                 <h4
                   style={
-                    stylesInline.footerCol_h4
-                    // e.title !== '' && stylesInline.footerCol_h4_before
+                    e.title !== ''
+                      ? stylesInline.footerCol_h4_before
+                      : stylesInline.footerCol_h4
                   }
                 >
                   {e.title}
@@ -121,6 +124,8 @@ function Footer({
                             href={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
+                            onMouseEnter={() => setHoverLink(!hoverLink)}
+                            onMouseLeave={() => setHoverLink(!hoverLink)}
                           >
                             {c.icon}
                             {c.label}
@@ -128,6 +133,8 @@ function Footer({
                         ) : (
                           <a
                             style={stylesInline.footerCol_ul_li_a}
+                            onMouseEnter={() => setHoverLink(!hoverLink)}
+                            onMouseLeave={() => setHoverLink(!hoverLink)}
                             href={c.link}
                           >
                             {c.icon}
