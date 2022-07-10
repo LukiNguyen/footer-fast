@@ -1,10 +1,7 @@
 /* add css module styles here (optional) */
 
 
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
+ 
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -17,10 +14,7 @@
     padding: 0;
     text-align: left;
 } 
-.footer{
-	background-color: #24262b;
-    padding: 70px 0;
-}
+
 .footerCol{
    width: 100%;
    padding: 0 15px;
