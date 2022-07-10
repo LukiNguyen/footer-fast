@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from './components/Footer'
+import styles from './styles.module.css'
 const FooterFast = ({
   option,
   background,
@@ -9,6 +10,7 @@ const FooterFast = ({
 }) => {
   return (
     <Footer
+      styles={styles}
       option={option}
       background={background}
       colorTitle={colorTitle}

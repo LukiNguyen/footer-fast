@@ -1,7 +1,12 @@
 import React from 'react'
-import styles from './footer.module.css'
-// import { Link } from 'react-router-dom'
-function Footer({ option, background, colorTitle, colorLabel, listColumn }) {
+function Footer({
+  option,
+  background,
+  colorTitle,
+  colorLabel,
+  listColumn,
+  styles
+}) {
   return (
     <footer
       className={styles.footer}
