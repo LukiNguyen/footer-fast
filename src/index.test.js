@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { FooterFast } from '.'
 
-describe('ExampleComponent', () => {
+describe('FooterFast', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(FooterFast).toBeTruthy()
   })
 })
