@@ -23,15 +23,15 @@ function Footer({ option, background, colorTitle, colorLabel, listColumn }) {
                     return (
                       <li key={index}>
                         {c.blank ? (
-                          <href
-                            to={c.link}
+                          <a
+                            href={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
                             style={{ color: colorLabel || '#bbbbbb' }}
                           >
                             {c.icon}
                             {c.label}
-                          </href>
+                          </a>
                         ) : (
                           <a
                             href={c.link}
