@@ -90,51 +90,54 @@ function Footer({
   }
   return (
     <footer
-      className={stylesInline.footer}
-      style={{ background: background || '#24262b' }}
+      style={[stylesInline.footer, { background: background || '#24262b' }]}
     >
-      <div className={stylesInline.container}>
-        <div className={stylesInline.row}>
+      <div style={stylesInline.container}>
+        <div style={stylesInline.row}>
           {listColumn.map((e, i) => {
             return (
-              <div className={stylesInline.footerCol} key={i}>
+              <div style={stylesInline.footerCol} key={i}>
                 <h4
-                  className={[
+                  style={[
                     stylesInline.footerCol_h4,
                     e.title !== ''
                       ? stylesInline.footerCol_h4_before
-                      : stylesInline.empty
+                      : stylesInline.empty,
+                    { color: colorTitle || '#ffffff' }
                   ]}
-                  style={{ color: colorTitle || '#ffffff' }}
                 >
                   {e.title}
                 </h4>
-                <ul className={stylesInline.footerCol_ul}>
+                <ul style={stylesInline.footerCol_ul}>
                   {e.options.map((c, index) => {
                     return (
                       <li
                         key={index}
-                        className={
+                        style={
                           index !== c.option &&
                           stylesInline.footerCol_ul_li_not__last_child
                         }
                       >
                         {c.blank ? (
                           <a
-                            className={stylesInline.footerCol_ul_li_a}
+                            style={[
+                              stylesInline.footerCol_ul_li_a,
+                              { color: colorLabel || '#bbbbbb' }
+                            ]}
                             href={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
-                            style={{ color: colorLabel || '#bbbbbb' }}
                           >
                             {c.icon}
                             {c.label}
                           </a>
                         ) : (
                           <a
-                            className={stylesInline.footerCol_ul_li_a}
+                            style={[
+                              stylesInline.footerCol_ul_li_a,
+                              { color: colorLabel || '#bbbbbb' }
+                            ]}
                             href={c.link}
-                            style={{ color: colorLabel || '#bbbbbb' }}
                           >
                             {c.icon}
                             {c.label}
