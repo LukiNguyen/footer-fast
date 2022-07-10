@@ -1,6 +1,20 @@
 import React from 'react'
-import styles from './styles.module.css'
-
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+import Footer from './components/Footer'
+const FooterFast = ({
+  option,
+  background,
+  colorTitle,
+  colorLabel,
+  listColumn
+}) => {
+  return (
+    <Footer
+      option={option}
+      background={background}
+      colorTitle={colorTitle}
+      colorLabel={colorLabel}
+      listColumn={listColumn}
+    />
+  )
 }
+export default FooterFast
