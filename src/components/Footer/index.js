@@ -7,137 +7,40 @@ function Footer({
   listColumn,
   styles
 }) {
-  const [hoverLink, setHoverLink] = React.useState(false)
-  const stylesInline = {
-    footer: {
-      padding: '70px 0',
-      background: background || '#24262b'
-    },
-    container: {
-      maxWidth: '1170px',
-      margin: 'auto'
-    },
-    row: {
-      display: 'grid',
-      flexWrap: 'wrap',
-      gridTemplateColumns: 'auto auto auto auto',
-      gap: '10px'
-    },
-    footerCol_ul: { listStyle: 'none', padding: '0', textAlign: 'left' },
-    footerCol: { width: '100%', padding: '0 15px' },
-    footerCol_h4: {
-      fontSize: '18px',
-      textTransform: 'capitalize',
-      marginBottom: '35px',
-      fontWeight: '500',
-      position: 'relative',
-      textAlign: 'left',
-      minHeight: '20px',
-      color: colorTitle || '#ffffff'
-    },
-    footerCol_h4_before: {
-      fontSize: '18px',
-      textTransform: 'capitalize',
-      marginBottom: '35px',
-      fontWeight: '500',
-      position: 'relative',
-      textAlign: 'left',
-      minHeight: '20px',
-      color: colorTitle || '#ffffff',
-      '::before': {
-        content: "''",
-        position: 'absolute',
-        left: '0',
-        bottom: '-10px',
-        backgroundColor: '#f5941a',
-        height: '2px',
-        boxSizing: 'border-box',
-        width: '50px'
-      }
-    },
-    footerCol_ul_li_not__last_child: {
-      '&::not(:lastChild)': {
-        marginBottom: '10px'
-      }
-    },
-    footerCol_ul_li_a: {
-      fontSize: '16px',
-      textTransform: 'capitalize',
-      textDecoration: 'none',
-      fontWeight: '300',
-      transition: 'all 0.3s ease',
-      display: 'flex',
-      gap: '10px',
-      '&:hover': {
-        color: 'red'
-      }
-    },
-    footerCol__socialLinks_a: {
-      display: 'inline-block',
-      height: '40px',
-      width: '40px',
-      margin: '0 10px 10px 0',
-      textAlign: 'center',
-      lineHeight: '40px',
-      borderRadius: '50%',
-      '&:hover': {
-        color: 'red'
-      },
-      transition: 'all 0.5s ease'
-    },
-    '@media (max-width: 767px)': {
-      __expression__: '(max-width: 767px)',
-      footerCol: { width: '50%', marginBottom: '30px' }
-    },
-    '@media (max-width: 574px)': {
-      __expression__: '(max-width: 574px)',
-      footerCol: { width: '100%' }
-    }
-  }
   return (
-    <footer style={stylesInline.footer}>
-      <div style={stylesInline.container}>
-        <div style={stylesInline.row}>
+    <footer
+      className={styles.footer}
+      style={{ background: background || '#24262b' }}
+    >
+      <div className={styles.container}>
+        <div className={styles.row}>
           {listColumn.map((e, i) => {
             return (
-              <div style={stylesInline.footerCol} key={i}>
+              <div className={styles.footerCol} key={i}>
                 <h4
-                  style={
-                    e.title !== ''
-                      ? stylesInline.footerCol_h4_before
-                      : stylesInline.footerCol_h4
-                  }
+                  className={e.title !== '' ? styles.before : styles.empty}
+                  style={{ color: colorTitle || '#ffffff' }}
                 >
                   {e.title}
                 </h4>
-                <ul style={stylesInline.footerCol_ul}>
+                <ul>
                   {e.options.map((c, index) => {
                     return (
-                      <li
-                        key={index}
-                        style={
-                          index !== c.option &&
-                          stylesInline.footerCol_ul_li_not__last_child
-                        }
-                      >
+                      <li key={index}>
                         {c.blank ? (
                           <a
-                            style={stylesInline.footerCol_ul_li_a}
                             href={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
-                            onMouseEnter={() => setHoverLink(!hoverLink)}
-                            onMouseLeave={() => setHoverLink(!hoverLink)}
+                            style={{ color: colorLabel || '#bbbbbb' }}
                           >
                             {c.icon}
                             {c.label}
                           </a>
                         ) : (
                           <a
-                            style={stylesInline.footerCol_ul_li_a}
-                            onMouseEnter={() => setHoverLink(!hoverLink)}
-                            onMouseLeave={() => setHoverLink(!hoverLink)}
                             href={c.link}
+                            style={{ color: colorLabel || '#bbbbbb' }}
                           >
                             {c.icon}
                             {c.label}
