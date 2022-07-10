@@ -99,7 +99,7 @@ function Footer({
           {listColumn.map((e, i) => {
             return (
               <div style={stylesInline.footerCol} key={i}>
-                <h4
+                {/* <h4
                   style={[
                     stylesInline.footerCol_h4,
                     e.title !== '' && stylesInline.footerCol_h4_before
@@ -139,7 +139,7 @@ function Footer({
                       </li>
                     )
                   })}
-                </ul>
+                </ul> */}
               </div>
             )
           })}
