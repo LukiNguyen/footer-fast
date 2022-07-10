@@ -68,19 +68,21 @@ function Footer({
       transition: 'all 0.3s ease',
       display: 'flex',
       gap: '10px',
-      color: hoverLink ? colorLabel || '#bbbbbb' : '#fff',
-      paddingLeft: hoverLink ? '0px' : '8px'
+      '&:hover': {
+        color: 'red'
+      }
     },
     footerCol__socialLinks_a: {
       display: 'inline-block',
       height: '40px',
       width: '40px',
-      backgroundColor: hoverLink ? '#ffffff' : 'rgba(255,255,255,0.2)',
       margin: '0 10px 10px 0',
       textAlign: 'center',
       lineHeight: '40px',
       borderRadius: '50%',
-      color: hoverLink ? '#24262b' : '#ffffff',
+      '&:hover': {
+        color: 'red'
+      },
       transition: 'all 0.5s ease'
     },
     '@media (max-width: 767px)': {
