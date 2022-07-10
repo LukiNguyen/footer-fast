@@ -100,9 +100,7 @@ function Footer({
                 <h4
                   style={[
                     stylesInline.footerCol_h4,
-                    e.title !== ''
-                      ? stylesInline.footerCol_h4_before
-                      : stylesInline.empty,
+                    e.title !== '' && stylesInline.footerCol_h4_before,
                     { color: colorTitle || '#ffffff' }
                   ]}
                 >
