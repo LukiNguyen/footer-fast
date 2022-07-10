@@ -9,7 +9,8 @@
 ```bash
 npm install --save footer-fast
 ```
-
+## Demo
+![alt text](./src/assets/demo.png)
 ## Usage
 
 ```jsx
