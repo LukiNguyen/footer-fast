@@ -1,6 +1,6 @@
 {
   "name": "footer-fast",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Create footer quickly with many flexible options - Lukim Nguyen",
   "author": "LukiNguyen",
   "license": "MIT",
@@ -11,7 +11,11 @@
   "engines": {
     "node": ">=10"
   },
-  "keywords": ["footer-fast","footer component","footer-quickly"],
+  "keywords": [
+    "footer-fast",
+    "footer component",
+    "footer-quickly"
+  ],
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
