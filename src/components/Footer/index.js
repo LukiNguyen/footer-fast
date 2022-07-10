@@ -47,9 +47,9 @@ function Footer({
       }
     },
     footerCol_ul_li_not__last_child: {
-      // '&::not(:last-child)': {
-      //   marginBottom: '10px'
-      // }
+      '&::not(:last-child)': {
+        marginBottom: '10px'
+      }
     },
     footerCol_ul_li_a: {
       fontSize: '16px',
@@ -59,10 +59,10 @@ function Footer({
       transition: 'all 0.3s ease',
       display: 'flex',
       gap: '10px',
-      // '&::hover': {
-      //   color: '#ffffff',
-      //   paddingLeft: '8px'
-      // },
+      '&::hover': {
+        color: '#ffffff',
+        paddingLeft: '8px'
+      },
       color: colorLabel || '#bbbbbb'
     },
     footerCol__socialLinks_a: {
