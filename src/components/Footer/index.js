@@ -98,10 +98,10 @@ function Footer({
             return (
               <div style={stylesInline.footerCol} key={i}>
                 <h4
-                  style={[
-                    stylesInline.footerCol_h4,
-                    e.title !== '' && stylesInline.footerCol_h4_before
-                  ]}
+                  style={
+                    stylesInline.footerCol_h4
+                    // e.title !== '' && stylesInline.footerCol_h4_before
+                  }
                 >
                   {e.title}
                 </h4>
@@ -117,7 +117,7 @@ function Footer({
                       >
                         {c.blank ? (
                           <a
-                            style={[stylesInline.footerCol_ul_li_a]}
+                            style={stylesInline.footerCol_ul_li_a}
                             href={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
@@ -127,7 +127,7 @@ function Footer({
                           </a>
                         ) : (
                           <a
-                            style={[stylesInline.footerCol_ul_li_a]}
+                            style={stylesInline.footerCol_ul_li_a}
                             href={c.link}
                           >
                             {c.icon}
