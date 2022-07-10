@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './footer.module.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 function Footer({ option, background, colorTitle, colorLabel, listColumn }) {
   return (
     <footer
@@ -23,7 +23,7 @@ function Footer({ option, background, colorTitle, colorLabel, listColumn }) {
                     return (
                       <li key={index}>
                         {c.blank ? (
-                          <Link
+                          <href
                             to={c.link}
                             target='_blank'
                             rel='noopener noreferrer'
@@ -31,15 +31,15 @@ function Footer({ option, background, colorTitle, colorLabel, listColumn }) {
                           >
                             {c.icon}
                             {c.label}
-                          </Link>
+                          </href>
                         ) : (
-                          <Link
-                            to={c.link}
+                          <a
+                            href={c.link}
                             style={{ color: colorLabel || '#bbbbbb' }}
                           >
                             {c.icon}
                             {c.label}
-                          </Link>
+                          </a>
                         )}
                       </li>
                     )
